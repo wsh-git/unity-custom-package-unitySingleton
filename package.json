@@ -1,0 +1,20 @@
+{
+  "name": "com.wsh.singleton",
+  "displayName": "Wsh Singleton",
+  "version": "0.0.1",
+  "unity": "2017.2",
+  "keywords": [
+    "Singleton"
+  ],
+  "description": "This is a singleton.",
+  "repository": {
+    "url": "https://github.com/wsh-git/unity-custom-package-unitySingleton.git",
+    "type": "git",
+    "revision": "9d824e3aeca574022eff896b9c751097dadd0619"
+  },
+  "author": {
+    "name": "wsh",
+    "email": "",
+    "url": ""
+  }
+}
