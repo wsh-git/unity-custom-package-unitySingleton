@@ -1,6 +1,6 @@
 {
-  "name": "com.wsh.singleton",
-  "displayName": "Wsh Singleton",
+  "name": "com.wshunity.singleton",
+  "displayName": "Wsh Unity Singleton",
   "version": "0.0.1",
   "unity": "2017.2",
   "keywords": [
