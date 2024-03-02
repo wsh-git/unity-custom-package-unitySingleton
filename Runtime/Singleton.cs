@@ -2,7 +2,7 @@
 
 namespace Wsh.Singleton {
     
-    public class Singleton<T> : MonoBehaviour where T : Component {
+    public class Singleton<T> : MonoBehaviour where T : Component, ISingleton {
 
         private static T m_instance;
 
@@ -11,6 +11,7 @@ namespace Wsh.Singleton {
                 if(m_instance == null) {
                     GameObject go = new GameObject(GetObjName(typeof(T).ToString()));
                     m_instance = go.AddComponent<T>();
+                    m_instance.OnInit();
                     DontDestroyOnLoad(go);
                 }
                 return m_instance;
@@ -22,7 +23,12 @@ namespace Wsh.Singleton {
             return "__" + array[array.Length - 1];
         }
         
+        protected virtual void Update() {
+
+        }
+
         public void Destroy() {
+            m_instance.OnDeinit();
             Object.Destroy(m_instance.gameObject);
             m_instance = null;
         }
