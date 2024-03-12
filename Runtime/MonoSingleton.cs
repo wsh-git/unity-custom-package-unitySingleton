@@ -2,7 +2,7 @@
 
 namespace Wsh.Singleton {
     
-    public class Singleton<T> : MonoBehaviour where T : Component, ISingleton {
+    public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T> {
 
         private static T m_instance;
 
@@ -22,9 +22,13 @@ namespace Wsh.Singleton {
             string[] array = v.Split('.');
             return "__" + array[array.Length - 1];
         }
-        
-        protected virtual void Update() {
 
+        protected virtual void OnInit() {
+            
+        }
+
+        protected virtual void OnDeinit() {
+            
         }
 
         public void Destroy() {
